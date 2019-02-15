@@ -163,4 +163,12 @@ export class MeydaAnalyzer {
       return null;
     }
   }
+  getAll(features, audioBuffer) {
+    if (this._m_previouseInputData === undefined) {
+      this._m.previousInputData = audioBuffer;
+    }
+    var result = this._m.extract(features || this._m._featuresToExtract, audioBuffer, this._m.previousInputData);
+    this._m.previousInputData = audioBuffer;
+    return result;
+  }
 }
