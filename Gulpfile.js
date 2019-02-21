@@ -30,4 +30,6 @@ gulp.task('buildNode',function(){
 });
 
 gulp.task('buildWeb', gulp.parallel('buildWeb:regular', 'buildWeb:minified'));
-gulp.task('build', gulp.parallel('buildNode', 'buildWeb'));
+//gulp.task('build', gulp.parallel('buildNode', 'buildWeb'));
+// 这个版本不build buildWeb版了，因为在ubuntu server上好像没法build 出来。
+gulp.task('build', gulp.parallel('buildNode'));
